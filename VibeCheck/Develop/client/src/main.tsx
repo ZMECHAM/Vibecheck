@@ -1,15 +1,12 @@
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import './index.css'
+// import './index.css'
 
 import App from './App';
-import ErrorPage from './pages/ErrorPage';
-import MainPage from './pages/MainPage';
-import VolunteerPage from './pages/VolunteerPage';
-import VolunteerForm from './pages/VolunteerForm';
-import EditVolunteer from './pages/EditVolunteer';
-import EditWork from './pages/EditWork';
-
+// import ErrorPage from './pages/ErrorPage';
+import Explore from './pages/explore';
+import Home from './pages/home';
+import LikedSongs from './pages/liked-songs';
 
 const router = createBrowserRouter([
   {
@@ -19,24 +16,16 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <MainPage />
+        element: <Home />
       }, 
       {
-        path: '/show-volunteers',
-        element: <VolunteerPage />
+        path: '/explore',
+        element: <Explore />
       },
       {
-        path: '/new-volunteer',
-        element: <VolunteerForm />
+        path: '/liked-songs',
+        element: <LikedSongs />
       },
-      {
-        path: '/edit-volunteer',
-        element: <EditVolunteer />
-      },
-      {
-        path: '/edit-work',
-        element: <EditWork />
-      }
     ]
   }
 ]);
