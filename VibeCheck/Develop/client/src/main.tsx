@@ -4,9 +4,9 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import App from './App';
 // import ErrorPage from './pages/ErrorPage';
-import Explore from './pages/explore';
-import Home from './pages/home';
-import LikedSongs from './pages/liked-songs';
+import Explore from './Pages/explore';
+import Login from './Pages/login';
+import LikedSongs from './Pages/liked-songs';
 
 const router = createBrowserRouter([
   {
@@ -16,7 +16,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Home />
+        element: <Login />
       }, 
       {
         path: '/explore',
