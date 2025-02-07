@@ -30,5 +30,11 @@ router.post('/login', async (req: Request, res: Response) => {
         );
 
         res.json({ token });
+
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({error: 'Internal Server Error'});
     }
 });
+
+export default router;
