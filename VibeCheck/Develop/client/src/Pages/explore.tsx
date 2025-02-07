@@ -1,6 +1,6 @@
 import { } from "react";
 import CardItem from "../components/card-item";
-import GenreGenerator from "../api/genre-generator";
+import GenreGenerator from "../components/genre-generator";
 
 const Explore = () => {
 
