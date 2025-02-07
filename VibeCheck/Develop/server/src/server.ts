@@ -1,13 +1,8 @@
-
-
-//existing code, no changes made as of yet -ethan
-
-
-
-// TODO: Create Sequelize connector from models folder and import in to connect to postgres server. 
+const forceDatabaseRefresh = false;
 
 import express from 'express';
-import routes from './routes/index.js';
+import sequelize from './config/database.js';
+// import routes from './routes/index.js';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -16,8 +11,10 @@ const PORT = process.env.PORT || 3001;
 app.use(express.static('../client/dist'));
 
 app.use(express.json());
-app.use(routes);
+// app.use(routes);
 
-app.listen(PORT, () => {
-  console.log(`Server is listening on port ${PORT}`);
+sequelize.sync({force: forceDatabaseRefresh}).then(() => {
+  app.listen(PORT, () => {
+    console.log(`Server is listening on port ${PORT}`);
+  });
 });

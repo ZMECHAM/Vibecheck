@@ -4,9 +4,9 @@ import "./index.css";
 
 import App from "./App";
 // import ErrorPage from './pages/ErrorPage';
-import Explore from "./Pages/explore";
-import Login from "./Pages/login";
-import LikedSongs from "./Pages/liked-songs";
+import Explore from "./pages/explore";
+import Login from "./pages/login";
+import LikedSongs from "./pages/liked-songs";
 
 const router = createBrowserRouter([
   {
