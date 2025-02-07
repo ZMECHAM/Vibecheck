@@ -23,7 +23,7 @@ class User
   public password!: string;
 
   // Method to compare hashed passwords
-  async checkPassword(password: string): Promise<boolean> {
+  async validatePassword(password: string): Promise<boolean> {
     return bcrypt.compare(password, this.password);
   }
 }

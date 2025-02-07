@@ -1,14 +1,28 @@
-import React from 'react';
+import React from "react";
+import Icon from "./icon";
 
-const CardItem = () => {
+export interface CardItemProps {
+  song: {
+    id: string;
+    name: string;
+    artists: { name: string }[];
+    album?: { images: { url: string }[] };
+    genre: string;
+  };
+  onLike: () => void;
+  onPass: () => void;
+}
 
+const CardItem: React.FC<CardItemProps> = ({ song, onLike, onPass }) => {
   return (
-    <div>
-        <cardcontent>
-            <h2>Track Title</h2>
-            <p>Artist</p>
-            <p>Genre</p>
-        </cardcontent>
+    <div className="card-content">
+      {/* <cardcontent> */}
+      <h2>{song.name}</h2>
+      <p>Artist: {song.artists.map((artist) => artist.name).join(", ")}</p>
+      <img src={song.album?.images[0].url} alt={`${song.name} album cover`} />
+      <p>{song.genre}</p>
+      <Icon onLike={onLike} onPass={onPass} />
+      {/* </cardcontent> */}
     </div>
   );
 };
