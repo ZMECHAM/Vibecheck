@@ -1,6 +1,6 @@
 import { DataTypes, Model, Optional } from "sequelize";
 import sequelize from "../config/database";
-import bcrypt from "bcryptjs";
+import bcrypt from "bcrypt";
 
 // Define the User attributes
 interface UserAttributes {
@@ -23,7 +23,7 @@ class User
   public password!: string;
 
   // Method to compare hashed passwords
-  async checkPassword(password: string): Promise<boolean> {
+  async validatePassword(password: string): Promise<boolean> {
     return bcrypt.compare(password, this.password);
   }
 }

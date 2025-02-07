@@ -1,7 +1,7 @@
 import express, { Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
-import bcrypt from 'bcryptjs';
-import { User } from '../models/User';
+// import bcrypt from 'bcrypt';
+import User from '../../models/user';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -29,6 +29,10 @@ router.post('/login', async (req: Request, res: Response) => {
 
         );
 
-        res.json({ token });
+        return res.json({ token });
+    }
+    catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: 'Server error'});
     }
 });
