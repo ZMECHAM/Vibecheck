@@ -26,8 +26,11 @@
     "noImplicitReturns": true /* Enable error reporting for codepaths that do not explicitly return in a function. */,
     "noImplicitOverride": true /* Ensure overriding members in derived classes are marked with an override modifier. */,
     "useUnknownInCatchVariables": true /* Ensure 'unknown' is used for catch clause variables. */,
-    "outDir": "./server/dist"
+
+    /* Output Settings */
+    "outDir": "./server/dist" // Specify output directory for compiled JS files
   },
-    "include": ["server/src/**/*"], // Include only TypeScript files from /src
-    "exclude": ["node_modules", "server/dist"] // Exclude compiled files to prevent overwriting
-  }
+  /* Include/Exclude Settings */
+  "include": ["server/src/**/*"], // Include only TypeScript files from /src
+  "exclude": ["node_modules", "server/dist"] // Exclude compiled files to prevent overwriting
+}
