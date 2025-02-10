@@ -9,13 +9,7 @@ import { User } from '../../models/user.js';
 router.get('/', async (_req: Request, res: Response) => {
   try {
     const song = await Song.findAll({
-      include: [
-        {
-          model: User,
-          as: 'assignedUser', // This should match the alias defined in the association
-          attributes: ['userName'], //Include only the username attribute
-        },
-      ],
+      attributes: { exclude: ['assignedUserId'] },
     });
     res.json(song);
   } catch (error: any) {
@@ -34,7 +28,7 @@ router.get('/:id', async (req: Request, res: Response) => {
         {
           model: User,
           as: 'assignedUser', // This should match the alias defined in the association
-          attributes: ['userName'], //Include only the userName attribute
+          attributes: ['assignedUserId'], //Include only the userName attribute
         },
       ],
     });
