@@ -31,12 +31,12 @@ const Navbar: React.FC = () => {
             <h1 className="nav-title">Vibe Check</h1>
             <div>
                 {!loginCheck ? (
-                    <button className='btn' type='button'>
+                    <button className='nav-login' type='button'>
                     <Link to='/login'>Login</Link>
                     </button>
                 ) : (
                 <>
-                    <button className='btn' type='button' onClick={() => { auth.logout();}}>Logout
+                    <button className='nav-logout' type='button' onClick={() => { auth.logout();}}>Logout
                     </button>
 
                     <div className="nav-links">

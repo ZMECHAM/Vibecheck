@@ -33,11 +33,11 @@ const Login = () => {
   };
 
   return (
-    <div className='form-container'>
-      <form className='form' onSubmit={handleSubmit}>
+    <div className='login-container'>
+      <form className='login-form' onSubmit={handleSubmit}>
         <h1>Login</h1>
         {/* Username input field */}
-        <div className="form">
+        <div className="username-input">
           <label>Username</label>
           <input 
             className="form-input"
@@ -48,7 +48,7 @@ const Login = () => {
           />
         </div>
         {/* Password input field */}
-        <div className="form">
+        <div className="password-input">
           <label>Password</label>
           <input 
             className="form-input"
@@ -59,8 +59,8 @@ const Login = () => {
           />
         </div>
         {/* Submit button for the login form */}
-        <div className="form">
-          <button className="btn btn-primary" type='submit'>Login</button>
+        <div className="button-div">
+          <button className="btn btn-login" type='submit'>Login</button>
         </div>
       </form>
     </div>
